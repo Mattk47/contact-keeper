@@ -14,16 +14,16 @@ router.get('/', (req, res) => res.send('Get logged in users contacts'))
 
 router.post('/', (req, res) => res.send('Add new user'))
 
-// @route       PUT /api/contacts
+// @route       PUT /api/contacts/:id
 // @desc        Update users contact
 // @access      Private
 
-router.put('/', (req, res) => res.send('Update contact'))
+router.put('/:id', (req, res) => res.send('Update contact'))
 
-// @route       DELETE /api/contacts
+// @route       DELETE /api/contacts/:id
 // @desc        Delete users contact
 // @access      Private
 
-router.delete('/', (req, res) => res.send('delete contact'))
+router.delete('/:id', (req, res) => res.send('delete contact'))
 
 module.exports = router;
