@@ -17,7 +17,7 @@ const ContactItem = ({ contact }) => {
                 )}
                 {phone && (
                     <li>
-                        <i className='fas fa-phone' /> {phone}
+                        <i className='fas fa-phone ' /> {phone}
                     </li>
                 )}
             </ul>
