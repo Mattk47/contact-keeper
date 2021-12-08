@@ -7,8 +7,6 @@ export const Contacts = () => {
 
     const { contacts } = contactContext
 
-    console.log(contacts)
-
     return (
         <div>
             {contacts.map(contact => (
