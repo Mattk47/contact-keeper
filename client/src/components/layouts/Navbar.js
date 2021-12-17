@@ -8,10 +8,16 @@ const Navbar = () => {
             <h1><i className='fas fa-id-card-alt' /> Contact Keeper </h1>
             <ul>
                 <li>
-                    <Link to='home'>Home</Link>
+                    <Link to='/'>Home</Link>
                 </li>
                 <li>
-                    <Link to='about'>About</Link>
+                    <Link to='/about'>About</Link>
+                </li>
+                <li>
+                    <Link to='register'>Register</Link>
+                </li>
+                <li>
+                    <Link to='login'>Login</Link>
                 </li>
             </ul>
         </div>
