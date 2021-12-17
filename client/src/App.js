@@ -6,6 +6,7 @@ import About from './components/pages/About'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import ContactState from './context/contact/ContactState'
 import AuthState from './context/auth/AuthState'
+import Register from './components/auth/Register';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
               <Routes>
                 <Route exact path='/' element={<Home />} ></Route>
                 <Route exact path='/about' element={<About />} ></Route>
+                <Route exact path='/register' element={<Register />} ></Route>
               </Routes>
             </div>
           </div>
