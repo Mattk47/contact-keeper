@@ -9,6 +9,7 @@ import AuthState from './context/auth/AuthState'
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import AlertState from './context/alert/AlertState';
+import Alerts from './components/layouts/Alerts';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <div >
               <Navbar />
               <div className='container'>
+                <Alerts />
                 <Routes>
                   <Route exact path='/' element={<Home />} ></Route>
                   <Route exact path='/about' element={<About />} ></Route>
