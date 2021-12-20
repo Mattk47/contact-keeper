@@ -8,24 +8,28 @@ import ContactState from './context/contact/ContactState'
 import AuthState from './context/auth/AuthState'
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
+import AlertState from './context/alert/AlertState';
+
 
 function App() {
   return (
     <AuthState>
       <ContactState>
-        <Router>
-          <div >
-            <Navbar />
-            <div className='container'>
-              <Routes>
-                <Route exact path='/' element={<Home />} ></Route>
-                <Route exact path='/about' element={<About />} ></Route>
-                <Route exact path='/register' element={<Register />} ></Route>
-                <Route exact path='/login' element={<Login />} ></Route>
-              </Routes>
+        <AlertState>
+          <Router>
+            <div >
+              <Navbar />
+              <div className='container'>
+                <Routes>
+                  <Route exact path='/' element={<Home />} ></Route>
+                  <Route exact path='/about' element={<About />} ></Route>
+                  <Route exact path='/register' element={<Register />} ></Route>
+                  <Route exact path='/login' element={<Login />} ></Route>
+                </Routes>
+              </div>
             </div>
-          </div>
-        </Router>
+          </Router>
+        </AlertState>
       </ContactState>
     </AuthState>
   );
