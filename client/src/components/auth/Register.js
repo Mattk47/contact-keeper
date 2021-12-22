@@ -1,13 +1,13 @@
 import React, { useState, useContext, useEffect } from 'react'
 import AlertContext from '../../context/alert/alertContext';
 import AuthContext from '../../context/auth/AuthContext';
-
-const Register = () => {
+import { useNavigate } from "react-router-dom";
+const Register = props => {
     const alertContext = useContext(AlertContext)
     const authContext = useContext(AuthContext)
-
+    let navigate = useNavigate();
     const { setAlert } = alertContext;
-    const { register, error, clearErrors } = authContext;
+    const { register, error, clearErrors, isAuthenticated } = authContext;
     const [user, setUser] = useState({
         name: '',
         email: '',
@@ -18,16 +18,25 @@ const Register = () => {
     const { name, email, password, password2 } = user
 
     useEffect(() => {
+        if (isAuthenticated) {
+
+            redirect()
+        }
         if (error === 'user already exists') {
             setAlert(error, 'danger')
             clearErrors()
         }
-    }, [error])
+        // eslint-disable-next-line
+    }, [error, isAuthenticated, props.history])
 
     const onChange = e => {
         setUser({ ...user, [e.target.name]: e.target.value })
     }
 
+    const redirect = () => {
+
+        navigate("/")
+    }
     const onSubmit = e => {
         if (name === '' || email === '' || password === '') {
             setAlert('Please enter all fields', 'danger')
