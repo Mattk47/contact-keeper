@@ -51,6 +51,11 @@ export default (state, action) => {
                 ...state,
                 filtered: null
             }
+        case CONTACT_ERROR:
+            return {
+                ...state,
+                error: action.payload
+            }
         default:
             return state;
     }
