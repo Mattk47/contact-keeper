@@ -37,6 +37,14 @@ export default (state, action) => {
                 contacts: state.contacts.filter(contact => contact.id !== action.payload),
                 loading: false
             };
+        case CLEAR_CONTACTS:
+            return {
+                ...state,
+                contacts: null,
+                filtered: null,
+                error: null,
+                current: null
+            }
         case SET_CURRENT:
             return {
                 ...state,
