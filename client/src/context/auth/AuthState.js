@@ -39,6 +39,7 @@ const AuthState = props => {
                 payload: res.data
             })
 
+
         } catch (error) {
             dispatch({ type: AUTH_ERROR })
 
@@ -110,7 +111,7 @@ const AuthState = props => {
             value={{
                 token: state.token,
                 isAuthenticated: state.isAuthenticated,
-                load: state.load,
+                loading: state.loading,
                 error: state.error,
                 user: state.user,
                 register,
