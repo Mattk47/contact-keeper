@@ -68,8 +68,16 @@ const ContactState = props => {
     }
     // Update contact_state
 
-    const updateContact = contact => {
-        dispatch({ type: UPDATE_CONTACT, payload: contact })
+    const updateContact = async contact => {
+
+        try {
+            const res = await axios.put(`http://localhost:9090/api/contacts/${contact._id}`, contact)
+
+            dispatch({ type: UPDATE_CONTACT, payload: res.data })
+
+        } catch (error) {
+            dispatch({ type: CONTACT_ERROR, payload: error.response.message })
+        }
 
     }
 
