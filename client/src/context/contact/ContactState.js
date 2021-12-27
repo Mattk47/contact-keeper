@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react'
 import ContactContext from './ContactContext'
-import contactReducer from './contactReducer'
+import contactReducer from './ContactReducer'
 import axios from 'axios'
 import {
     GET_CONTACTS,
