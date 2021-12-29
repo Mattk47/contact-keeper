@@ -28,7 +28,7 @@ const ContactState = props => {
     const getContacts = async () => {
 
         try {
-            const res = await axios.get('http://localhost:9090/api/contacts')
+            const res = await axios.get('/api/contacts')
 
             dispatch({ type: GET_CONTACTS, payload: res.data })
 
@@ -43,7 +43,7 @@ const ContactState = props => {
     const addContact = async contact => {
 
         try {
-            const res = await axios.post('http://localhost:9090/api/contacts', contact)
+            const res = await axios.post('/api/contacts', contact)
 
             dispatch({ type: ADD_CONTACT, payload: res.data })
 
@@ -56,7 +56,7 @@ const ContactState = props => {
 
     const deleteContact = async id => {
         try {
-            const res = await axios.delete(`http://localhost:9090/api/contacts/${id}`)
+            const res = await axios.delete(`/api/contacts/${id}`)
 
             dispatch({ type: DELETE_CONTACT, payload: id })
 
@@ -71,7 +71,7 @@ const ContactState = props => {
     const updateContact = async contact => {
 
         try {
-            const res = await axios.put(`http://localhost:9090/api/contacts/${contact._id}`, contact)
+            const res = await axios.put(`/api/contacts/${contact._id}`, contact)
 
             dispatch({ type: UPDATE_CONTACT, payload: res.data })
 
